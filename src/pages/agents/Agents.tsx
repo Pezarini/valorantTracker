@@ -31,11 +31,15 @@ useEffect(() => {
     getDataAgents();
 }, []);
 
+function filterDataAgents() {
+    return agentsData.filter((item: dataAgents) => item.role);
+}
+
 return (
 	<>
         <div className="cardContainer">
             <div className="cardCenterContainer">
-                {agentsData.map((item: dataAgents) => (
+                {filterDataAgents().map((item: dataAgents) => (
                     <div key={item.uuid} className="cardContent">
                         <img src={item.fullPortraitV2}></img>
                         <h2>{item.displayName}</h2>

@@ -12,8 +12,3 @@
 - I hope you enjoy :)
 
 
-function filterDataAgents() {
-   const data = agentsData.filter((item: dataAgents) => item.role);
-   console.log(data);
-   return data;
-}
