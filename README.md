@@ -10,3 +10,10 @@
 - If you want to see the prototype in figma, check the [link](https://www.figma.com/design/uifDTqqSngSCFj0kFRTyVL/Valorant-project?node-id=0-1&t=T2ujf4TQHPRY5hOZ-1)
 
 - I hope you enjoy :)
+
+
+function filterDataAgents() {
+   const data = agentsData.filter((item: dataAgents) => item.role);
+   console.log(data);
+   return data;
+}

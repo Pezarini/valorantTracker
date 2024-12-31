@@ -3,9 +3,9 @@ import './index.css';
 import { StrictMode } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import App from './App';
-import Agents from './pages/Agents';
-import Weapons from './pages/Weapons';
-import Tiers from './pages/Tiers';
+import Agents from './pages/agents/Agents';
+import Weapons from './pages/weapons/Weapons';
+import Tiers from './pages/tiers/Tiers';
 
 const router = createBrowserRouter([
   {
