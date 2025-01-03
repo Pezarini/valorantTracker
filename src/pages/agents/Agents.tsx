@@ -5,6 +5,7 @@ import './AgentsContainer.css'
 function Agents() {
 
 const [agentsData, setAgentsData] = useState([]);
+const [dataInput, setDataInput] = useState('');
 
 interface dataAgents {
     uuid: string,
@@ -12,6 +13,7 @@ interface dataAgents {
     displayName: string,
     description: string
     role: roleAgent,
+    isPlayableCharacter: boolean,
 }
 
 interface roleAgent {
@@ -32,12 +34,27 @@ useEffect(() => {
 }, []);
 
 function filterDataAgents() {
-    return agentsData.filter((item: dataAgents) => item.role);
+    let listOfAgents = agentsData.filter((data: dataAgents) => data.isPlayableCharacter === true);
+
+    if (dataInput) {
+        listOfAgents = listOfAgents.filter((data: dataAgents) => dataInput === data.role.displayName);
+    }
+
+    return listOfAgents;
 }
 
 return (
 	<>
         <div className="cardContainer">
+            <div className="dropDrownContainer">
+                <select name="selectedAgent" id="agentDropdown" onChange={(e) =>  setDataInput(e.target.value)}>
+                    <option value="">Select a role</option>
+                    <option value="Duelist">Duelist</option>
+                    <option value="Initiator">Initiator</option>
+                    <option value="Controller">Controller</option>
+                    <option value="Sentinel">Sentinel</option>
+                </select>
+            </div>
             <div className="cardCenterContainer">
                 {filterDataAgents().map((item: dataAgents) => (
                     <div key={item.uuid} className="cardContent">

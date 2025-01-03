@@ -1,4 +1,5 @@
 .cardContainer {
+    margin-top: 80px;
     width: 100%;
     height: auto;
     display: flex;
@@ -6,19 +7,44 @@
 }
 
 .cardCenterContainer {
-    width: 70%;
-    justify-content: center;
+    width: 80%;
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
 
 .cardContent{
-    width: 30%;
+    width: 25%;
+    margin: 30px;
     padding: 10px;
+    background-color: #1C2833;
 
     img {
         width: 250px;
         height: 241px;
     }
+}
+
+.dropDrownContainer select {
+    background-color: #2A2A2A;
+    color: #FFFFFF;
+    border: 1px solid #2A2A2A;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 30px;
+    width: 100%;
+    max-width: 300px;
+    appearance: none;
+}
+
+.dropDrownContainer select option {
+    background-color: #2A2A2A;
+    color: #FFFFFF;
+}
+
+.dropDrownContainer select:hover {
+    cursor: pointer;
+    border-color: #FFFFFF;
 }
