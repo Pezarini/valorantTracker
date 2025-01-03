@@ -1,6 +1,6 @@
 import logo from '../../assets/valorantLogo.png';
 import searchIcon from '../../assets/searchIcon.svg';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './HeaderContainer.css'
 
 export default function App() {

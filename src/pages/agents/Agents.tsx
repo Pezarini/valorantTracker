@@ -4,9 +4,6 @@ import './AgentsContainer.css'
 
 function Agents() {
 
-const [agentsData, setAgentsData] = useState([]);
-const [dataInput, setDataInput] = useState('');
-
 interface dataAgents {
     uuid: string,
     fullPortraitV2: string,
@@ -19,6 +16,9 @@ interface dataAgents {
 interface roleAgent {
     displayName: string,
 }
+
+const [agentsData, setAgentsData] = useState<dataAgents[]>([]);
+const [dataInput, setDataInput] = useState<string>('');
 
 async function getDataAgents () {
     try {
@@ -33,7 +33,7 @@ useEffect(() => {
     getDataAgents();
 }, []);
 
-function filterDataAgents() {
+function filterDataAgents(): dataAgents[] {
     let listOfAgents = agentsData.filter((data: dataAgents) => data.isPlayableCharacter === true);
 
     if (dataInput) {
